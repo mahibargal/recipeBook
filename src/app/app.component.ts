@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-project';
+  boolForRecipe:boolean = true;
+  hideShowRecipeShopping(key:string){
+    if(key=='recipe'){
+      this.boolForRecipe = true;
+    }else{
+      this.boolForRecipe = false;
+
+    }
+  }
 }
