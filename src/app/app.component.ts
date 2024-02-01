@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'recipe-project';
+  title = 'Recipe Project';
   boolForRecipe:boolean = true;
-  hideShowRecipeShopping(key:string){
-    if(key=='recipe'){
-      this.boolForRecipe = true;
-    }else{
-      this.boolForRecipe = false;
+  constructor(private router:Router){
 
-    }
   }
+  // hideShowRecipeShopping(key:string){
+  //   if(key=='recipe'){
+  //     this.router.navigate(['/'])
+  //   }else{
+  //     this.router.navigate(['/shopping-list'])
+
+  //   }
+  // }
 }

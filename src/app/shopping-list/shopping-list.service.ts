@@ -7,7 +7,7 @@ export class ShoppingListService {
         new Ingredient('Tomato', 5),
         new Ingredient('Carrot', 5)
     ];
-    ingredientsChanged = new EventEmitter<Ingredient>();
+    ingredientsChanged = new EventEmitter<Ingredient[]>();
 
     getIngredients() {
         return this.ingredients.slice();    //slice makes a copy of ingredients
@@ -15,5 +15,13 @@ export class ShoppingListService {
 
     addNewIngredient(ingredient) {
         this.ingredients.push(ingredient);
+    }
+    addIngredientFromRecipe(ingredient){
+        debugger;
+        // for(let i=0;i<ingredient.length;i++){
+        //     this.ingredients.push(ingredient[i]); 
+        // }
+        this.ingredients.push(...ingredient);
+        this.ingredientsChanged.emit(this.ingredients.slice()); 
     }
 }
