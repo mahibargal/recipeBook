@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 import { Ingredient } from "../shared/ingredient.model";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Recipe } from "./recipe.model";
@@ -17,7 +18,7 @@ new Ingredient('potato',2),
           new Ingredient('tomato',2),
         ])
       ];
-recipeSelected  = new EventEmitter<Recipe>();
+// recipeSelected  = new Subject<Recipe>();
 constructor(private shoppingServ:ShoppingListService){
 
 }

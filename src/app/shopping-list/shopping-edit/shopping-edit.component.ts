@@ -21,7 +21,7 @@ addIngredient(){
   const name = this.nameInput.nativeElement.value;
   let ingredient:any = new Ingredient(name,amount);
   this.shoppingServ.addNewIngredient(ingredient);
-  this.shoppingServ.ingredientsChanged.emit(ingredient);
+  this.shoppingServ.ingredientsChanged.next(ingredient);
   // this.ingredientAdded.emit(ingredient);
 }
 
